@@ -2,6 +2,7 @@
 
 const {db } = require('../server/db')
 const Expense = require('../server/db/models/Expense')
+const Category = require('../server/db/models/Category')
 
 /**
  * seed - this function clears the database, updates tables to
@@ -16,10 +17,44 @@ const Expense = require('../server/db/models/Expense')
         return Expense.create(expense);
       })
     );
+    await Promise.all(
+      createCategories().map(category => {
+        return Category.create(category);
+      })
+    );
   } catch (err) {
     console.log(err);
   }
 };
+
+// creating dummy categories
+function createCategories() {
+  return [
+    {
+      name: "Alcohol"
+    },
+    {
+      name: "Dining Out"
+    },
+    {
+      name: "Entertainment"
+    },
+    {
+      name: "Groceries"
+    },
+    {
+      name: "Health & Personal Care"
+    },
+    {
+      name: "Other"
+    },
+    {
+      name: "Shopping"
+    },
+    {
+      name: "Snacks & Coffee"
+    },
+  ]}
 
 // creating dummy expenses
 function createExpenses() {

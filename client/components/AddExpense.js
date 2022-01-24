@@ -17,7 +17,6 @@ class AddExpense extends React.Component {
   }
 
   handleSubmit(evt) {
-    console.log("handleSubmit evt.target -->", evt.target);
     evt.preventDefault();
     this.props.addExpense({
       ...this.state,
@@ -136,8 +135,8 @@ class AddExpense extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  addExpense: (expense) => dispatch(addExpense(expense)),
+const mapDispatchToProps = (dispatch, {history}) => ({
+  addExpense: (expense) => dispatch(addExpense(expense, history)),
 });
 
 export default connect(null, mapDispatchToProps)(AddExpense);

@@ -43,12 +43,14 @@ export const fetchExpenses = () => {
   };
 };
 
-export const addExpense = (expense) => {
+export const addExpense = (expense, history) => {
   return async (dispatch) => {
     try {
       console.log("** EXPENSE: ", expense)
       const { data: newExpense } = await axios.post("/api/expenses", expense);
       dispatch(_addExpense(newExpense));
+      history.push(`/${newExpense.year}/${newExpense.month}`)
+      console.log(history)
     } catch (err) {
       console.log(err);
     }
