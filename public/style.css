@@ -6,16 +6,19 @@ body {
 
 a {
   text-decoration: none;
+  color: #7e8287;
+  font-weight: bold;
+  font-size: medium;
 }
 
 label {
   display: block;
 }
 
-nav a {
+/* nav a {
   display: inline-block;
   margin: 1em;
-}
+} */
 
 form div {
   margin: 1em;
@@ -36,5 +39,23 @@ form div {
   border-bottom-right-radius: 8px;
   font-weight: bold;
   font-size: xx-large;
+}
+
+.btn {
+  background-color: #c5dedd;
+  border: transparent;
+  color: black;
+  font-weight: bold;
+}
+
+.topheader {
+  align-content: center;
+  text-align: center;
+  font-size: medium;
+}
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold
 }
 
