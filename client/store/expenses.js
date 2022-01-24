@@ -46,6 +46,7 @@ export const fetchExpenses = () => {
 export const addExpense = (expense) => {
   return async (dispatch) => {
     try {
+      console.log("** EXPENSE: ", expense)
       const { data: newExpense } = await axios.post("/api/expenses", expense);
       dispatch(_addExpense(newExpense));
     } catch (err) {

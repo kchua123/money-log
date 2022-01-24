@@ -11,19 +11,19 @@ a {
   font-size: medium;
 }
 
-label {
+/* label {
   display: block;
-}
+} */
 
 /* nav a {
   display: inline-block;
   margin: 1em;
 } */
 
-form div {
+/* form div {
   margin: 1em;
   display: inline-block;
-}
+} */
 
 .header-box {
   background: #c5dedd;
@@ -54,8 +54,26 @@ form div {
   font-size: medium;
 }
 
-h1 {
+h1, h2, h3, h4 {
   font-family: 'Courier New', Courier, monospace;
-  font-weight: bold
+  font-weight: bold;
 }
 
+.offcanvas {
+  background-color: #fad2e1;
+  padding: 30px;
+}
+
+.btn-close {
+  position: fixed;
+  right: 15px;
+  top: 15px
+}
+
+.add-form {
+  width: 250px;
+}
+
+.category-select {
+  width: 250px;
+}

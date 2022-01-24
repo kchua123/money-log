@@ -27,8 +27,8 @@ class AddExpense extends React.Component {
         this.state.date[1] +
         this.state.date[2] +
         this.state.date[3],
-      day: this.state.date[7] +
-      this.state.date[8]
+      day: this.state.date[8] +
+      this.state.date[9]
     });
     this.setState({
       cost: 0,
@@ -50,10 +50,10 @@ class AddExpense extends React.Component {
     const { handleSubmit } = this;
 
     return (
-      <div className="mt-3 ms-3">
-        <form id="add-form" onSubmit={handleSubmit}>
-          <div className="mb-3 row">
-            <div className="col-sm-2">
+      <div className="container">
+        <form className="add-form" onSubmit={handleSubmit}>
+          <div className="mb-3 row gx-5">
+            <div className="col-sm-2 category-select">
               <select
                 className="form-select"
                 value={category}
@@ -86,6 +86,7 @@ class AddExpense extends React.Component {
                 value={cost}
                 onChange={this.handleChange}
                 placeholder="Cost"
+                className="form-control"
               />
             </div>
           </div>
@@ -100,6 +101,7 @@ class AddExpense extends React.Component {
                 value={vendor}
                 onChange={this.handleChange}
                 placeholder="Vendor"
+                className="form-control"
               />
             </div>
           </div>
@@ -115,19 +117,21 @@ class AddExpense extends React.Component {
                 value={date}
                 onChange={this.handleChange}
                 placeholder="Date"
+                className="form-control"
               />
             </div>
           </div>
 
-          <div className="mb-3 row">
+          <div className="mb-3 mt-4 row">
             <div className="col-sm-10">
               <button type="submit" className="btn btn-primary btn-sm">
                 Submit
               </button>
             </div>
           </div>
+          
         </form>
-      </div>
+        </div>
     );
   }
 }
