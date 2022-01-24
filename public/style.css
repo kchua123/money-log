@@ -1,5 +1,7 @@
 body {
   font-family: sans-serif;
+  background: #dbe7e4;
+  font-size: small;
 }
 
 a {
@@ -19,3 +21,20 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.header-box {
+  background: #c5dedd;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.total-box {
+  background: #fad2e1;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-weight: bold;
+  font-size: xx-large;
+}
+

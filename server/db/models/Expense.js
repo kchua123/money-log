@@ -10,15 +10,23 @@ const Expense = db.define("expense", {
     type: Sequelize.DATEONLY,
     allowNull: false,
   },
+  day: {
+    type: Sequelize.STRING,
+  },
+  month: {
+    type: Sequelize.STRING,
+  },
+  year: {
+    type: Sequelize.STRING,
+  },
   category: {
     type: Sequelize.STRING,
     allowNull: false,
-    defaultValue: "Other"
+    defaultValue: "Other",
   },
   vendor: {
     type: Sequelize.STRING,
-  }
-  });
-
+  },
+});
 
 module.exports = Expense;

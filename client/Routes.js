@@ -6,6 +6,7 @@ import Home from './components/Home';
 import {me} from './store'
 import Expenses from './components/Expenses';
 import AddExpense from './components/AddExpense';
+import MonthExpenses from "./components/MonthExpenses"
 
 /**
  * COMPONENT
@@ -27,9 +28,9 @@ class Routes extends Component {
           </Switch>
         ) : (
           <Switch>
-            <Route exact path='/' exact component={AddExpense} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
+            <Route exact path='/' exact component={Expenses} />
+            <Route exact path='/add' exact component={AddExpense} />
+            <Route exact path='/:year/:month' exact component={MonthExpenses} />
           </Switch>
         )}
       </div>

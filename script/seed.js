@@ -28,247 +28,424 @@ function createExpenses() {
       cost: 58,
       date: "2021-06-20",
       category: "Dining Out",
-      vendor: "Lucali"
+      vendor: "Lucali",
+      day: "20",
+      month: "06",
+      year: "2021"
     },
     {
       cost: 25,
       date: "2021-07-22",
       category: "Alcohol",
-      vendor: "Trader Joe's"
+      vendor: "Trader Joe's",
+      day: "22",
+      month: "07",
+      year: "2021"
     },
     {
       cost: 16,
       date: "2021-08-28",
       category: "Entertainment",
-      vendor: "AMC"
+      vendor: "AMC",
+      day: "28",
+      month: "08",
+      year: "2021"
     },
     {
       cost: 65,
       date: "2021-09-17",
       category: "Groceries",
-      vendor: "Trader Joe's"
+      vendor: "Trader Joe's",
+      day: "17",
+      month: "09",
+      year: "2021"
     },
     {
       cost: 85,
       date: "2021-10-02",
       category: "Health & Personal Care",
-      vendor: "Oskin Med Spa"
+      vendor: "Oskin Med Spa",
+      day: "02",
+      month: "10",
+      year: "2021"
     },
     {
       cost: 112,
       date: "2021-11-10",
       category: "Shopping",
-      vendor: "Nordstrom"
+      vendor: "Nordstrom",
+      day: "10",
+      month: "11",
+      year: "2021"
     },
     {
       cost: 7,
       date: "2021-12-18",
       category: "Snacks & Coffee",
-      vendor: "Joe's Pizza"
+      vendor: "Joe's Pizza",
+      day: "18",
+      month: "12",
+      year: "2021"
     },
     {
       cost: 138,
       date: "2021-12-04",
       category: "Dining Out",
-      vendor: "Bestia"
+      vendor: "Bestia",
+      day: "04",
+      month: "12",
+      year: "2021"
     },
     {
       cost: 42,
       date: "2021-06-07",
       category: "Alcohol",
-      vendor: "Angel's Share"
+      vendor: "Angel's Share",
+      day: "07",
+      month: "06",
+      year: "2021"
     },
     {
       cost: 150,
       date: "2021-07-05",
       category: "Entertainment",
-      vendor: "Ticketmaster"
+      vendor: "Ticketmaster",
+      day: "05",
+      month: "07",
+      year: "2021"
     },
     {
       cost: 39,
       date: "2021-08-29",
       category: "Groceries",
-      vendor: "Whole Foods"
+      vendor: "Whole Foods",
+      day: "29",
+      month: "08",
+      year: "2021"
     },
     {
       cost: 12,
       date: "2021-09-19",
       category: "Other",
-      vendor: "PetSmart"
+      vendor: "PetSmart",
+      day: "19",
+      month: "09",
+      year: "2021"
     },
     {
       cost: 178,
       date: "2021-10-12",
       category: "Shopping",
-      vendor: "Cole Haan"
+      vendor: "Cole Haan",
+      day: "12",
+      month: "10",
+      year: "2021"
     },
     {
       cost: 9,
       date: "2021-11-01",
       category: "Snacks & Coffee",
-      vendor: "Lady M"
+      vendor: "Lady M",
+      day: "01",
+      month: "11",
+      year: "2021"
     },
     {
       cost: 35,
       date: "2021-12-08",
       category: "Dining Out",
-      vendor: "Despana"
+      vendor: "Despana",
+      day: "08",
+      month: "12",
+      year: "2021"
     },
     {
       cost: 32,
       date: "2021-06-02",
       category: "Alcohol",
-      vendor: "Brooklyn Brewery"
+      vendor: "Brooklyn Brewery",
+      day: "02",
+      month: "06",
+      year: "2021"
     },
     {
       cost: 30,
       date: "2021-07-20",
       category: "Entertainment",
-      vendor: "New York Botanical Garden"
+      vendor: "New York Botanical Garden",
+      day: "20",
+      month: "07",
+      year: "2021"
     },
     {
       cost: 28,
       date: "2021-08-14",
       category: "Groceries",
-      vendor: "Trader Joe's"
+      vendor: "Trader Joe's",
+      day: "14",
+      month: "08",
+      year: "2021"
     },
     {
       cost: 30,
       date: "2021-09-01",
       category: "Health & Personal Care",
-      vendor: "King Spa"
+      vendor: "King Spa",
+      day: "01",
+      month: "09",
+      year: "2021"
     },
     {
       cost: 18,
       date: "2021-10-10",
       category: "Snacks & Coffee",
-      vendor: "Los Tacos No 1"
+      vendor: "Los Tacos No 1",
+      day: "10",
+      month: "10",
+      year: "2021"
     },
     {
       cost: 5,
       date: "2021-11-02",
       category: "Snacks & Coffee",
-      vendor: "Boba Guys"
+      vendor: "Boba Guys",
+      day: "02",
+      month: "11",
+      year: "2021"
     },
     {
       cost: 45,
       date: "2021-06-03",
       category: "Dining Out",
-      vendor: "Luzzo's BK"
+      vendor: "Luzzo's BK",
+      day: "03",
+      month: "06",
+      year: "2021"
     },
     {
       cost: 30,
       date: "2021-07-24",
       category: "Dining Out",
-      vendor: "Clark's Restaurant"
+      vendor: "Clark's Restaurant",
+      day: "24",
+      month: "07",
+      year: "2021"
     },
     {
       cost: 54,
       date: "2021-08-14",
       category: "Dining Out",
-      vendor: "Despana"
+      vendor: "Despana",
+      day: "14",
+      month: "08",
+      year: "2021"
     },
     {
       cost: 43,
       date: "2021-09-20",
       category: "Dining Out",
-      vendor: "The Islands"
+      vendor: "The Islands",
+      day: "20",
+      month: "09",
+      year: "2021"
     },
     {
       cost: 34,
       date: "2021-10-10",
       category: "Dining Out",
-      vendor: "99 Favor Taste"
+      vendor: "99 Favor Taste",
+      day: "10",
+      month: "10",
+      year: "2021"
     },
     {
       cost: 118,
       date: "2021-11-16",
       category: "Dining Out",
-      vendor: "Ohshima Sushi"
+      vendor: "Ohshima Sushi",
+      day: "16",
+      month: "11",
+      year: "2021"
     },
     {
       cost: 29,
       date: "2021-12-17",
       category: "Dining Out",
-      vendor: "Taco Nazo"
+      vendor: "Taco Nazo",
+      day: "17",
+      month: "12",
+      year: "2021"
     },
     {
       cost: 20,
       date: "2021-06-30",
       category: "Shopping",
-      vendor: "Amazon"
+      vendor: "Amazon",
+      day: "30",
+      month: "06",
+      year: "2021"
     },
     {
       cost: 33,
       date: "2021-07-28",
       category: "Shopping",
-      vendor: "Amazon"
+      vendor: "Amazon",
+      day: "28",
+      month: "07",
+      year: "2021"
     },
     {
       cost: 87,
       date: "2021-08-25",
       category: "Shopping",
-      vendor: "Banana Republic"
+      vendor: "Banana Republic",
+      day: "25",
+      month: "08",
+      year: "2021"
     },
     {
       cost: 16,
       date: "2021-09-19",
       category: "Shopping",
-      vendor: "Target"
+      vendor: "Target",
+      day: "19",
+      month: "09",
+      year: "2021"
     },
     {
       cost: 23,
       date: "2021-09-01",
       category: "Other",
-      vendor: "CVS"
+      vendor: "CVS",
+      day: "01",
+      month: "09",
+      year: "2021"
     },
     {
       cost: 13,
       date: "2021-06-12",
       category: "Snacks & Coffee",
-      vendor: "Ample Hills Creamery"
+      vendor: "Ample Hills Creamery",
+      day: "12",
+      month: "06",
+      year: "2021"
     },
     {
       cost: 6,
       date: "2021-07-13",
       category: "Snacks & Coffee",
-      vendor: "Chinatown Ice Cream Factory"
+      vendor: "Chinatown Ice Cream Factory",
+      day: "13",
+      month: "07",
+      year: "2021"
     },
     {
       cost: 5,
       date: "2021-08-03",
       category: "Snacks & Coffee",
-      vendor: "Gong Cha"
+      vendor: "Gong Cha",
+      day: "03",
+      month: "08",
+      year: "2021"
     },
     {
       cost: 13,
       date: "2021-09-22",
       category: "Snacks & Coffee",
-      vendor: "Dough"
+      vendor: "Dough",
+      day: "22",
+      month: "09",
+      year: "2021"
     },
     {
       cost: 38,
       date: "2021-10-23",
       category: "Groceries",
-      vendor: "Trader Joe's"
+      vendor: "Trader Joe's",
+      day: "23",
+      month: "10",
+      year: "2021"
     },
     {
       cost: 100,
       date: "2021-11-29",
       category: "Groceries",
-      vendor: "Whole Foods"
+      vendor: "Whole Foods",
+      day: "29",
+      month: "11",
+      year: "2021"
     },
     {
       cost: 64,
       date: "2021-12-29",
       category: "Groceries",
-      vendor: "Whole Foods"
+      vendor: "Whole Foods",
+      day: "29",
+      month: "12",
+      year: "2021"
     },
     {
       cost: 30,
       date: "2021-06-29",
       category: "Entertainment",
-      vendor: "Brooklyn Museum"
+      vendor: "Brooklyn Museum",
+      day: "29",
+      month: "06",
+      year: "2021"
+    },
+    {
+      cost: 35,
+      date: "2022-01-10",
+      category: "Entertainment",
+      vendor: "MoMa",
+      day: "10",
+      month: "01",
+      year: "2022"
+    },
+    {
+      cost: 6,
+      date: "2022-01-12",
+      category: "Snacks & Coffee",
+      vendor: "Boba Guys",
+      day: "12",
+      month: "01",
+      year: "2022"
+    },
+    {
+      cost: 58,
+      date: "2022-01-03",
+      category: "Shopping",
+      vendor: "Amazon",
+      day: "03",
+      month: "01",
+      year: "2022"
+    },
+    {
+      cost: 126,
+      date: "2022-01-20",
+      category: "Dining Out",
+      vendor: "Mastro's",
+      day: "20",
+      month: "01",
+      year: "2022"
+    },
+    {
+      cost: 12,
+      date: "2022-01-16",
+      category: "Snacks & Coffee",
+      vendor: "Gong Cha",
+      day: "16",
+      month: "01",
+      year: "2022"
+    },
+    {
+      cost: 12,
+      date: "2022-01-09",
+      category: "Shopping",
+      vendor: "PetSmart",
+      day: "09",
+      month: "01",
+      year: "2022"
     }
   ]}
 

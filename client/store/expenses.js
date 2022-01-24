@@ -2,7 +2,8 @@ import axios from "axios";
 
 // Action Type
 const GOT_EXPENSES = "GOT_EXPENSES";
-const ADD_EXPENSE = "ADD_EXPENSE"
+const ADD_EXPENSE = "ADD_EXPENSE";
+const ADD_MONTH_YEAR = "ADD_MONTH_YEAR";
 
 // Action Creator
 const _gotExpenses = (expenses) => ({
@@ -15,6 +16,11 @@ const _addExpense = (expense) => ({
   expense,
 });
 
+const _addMonthYear = (expense) => ({
+  type: ADD_MONTH_YEAR,
+  expense,
+});
+
 // const _updateSuperhero = (superhero) => ({
 //   type: UPATE_SUPERHERO,
 //   superhero,
@@ -24,8 +30,6 @@ const _addExpense = (expense) => ({
 //   type: DELETE_SUPERHERO,
 //   superhero,
 // });
-
-
 
 // Thunks
 export const fetchExpenses = () => {
@@ -42,15 +46,26 @@ export const fetchExpenses = () => {
 export const addExpense = (expense) => {
   return async (dispatch) => {
     try {
-      const { data: newExpense } = await axios.post(
-        "/api/expenses", expense
-      );
+      const { data: newExpense } = await axios.post("/api/expenses", expense);
       dispatch(_addExpense(newExpense));
     } catch (err) {
       console.log(err);
     }
   };
 };
+
+// export const addMonthYear = (expense) => {
+//   return async (dispatch) => {
+//     try {
+//       console.log("***EXPENSE FROM ADDMONTHYEAR THUNK", expense)
+//       const { data: updatedExpense } = await axios.put("/api/expenses",
+//         expense);
+//       dispatch(_addMonthYear(updatedExpense));
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   };
+// };
 
 // export const updateSuperhero = (superhero, history) => {
 //   return async (dispatch) => {
@@ -87,7 +102,11 @@ export default (state = initialState, action) => {
     case GOT_EXPENSES:
       return action.expenses;
     case ADD_EXPENSE:
-      return [...state, action.expense]
+      return [...state, action.expense];
+    case ADD_MONTH_YEAR:
+      return state.map((expense) =>
+        expense.id === action.expense.id ? action.expense : expense
+      );
     // case UPATE_SUPERHERO:
     //   return state.map((superhero) =>
     //     superhero.id === action.superhero.id ? action.superhero : superhero
