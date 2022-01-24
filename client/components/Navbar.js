@@ -12,7 +12,7 @@ const Navbar = () => (
   </div>
   <div className="row justify-content-md-center">
     <div className="col justify-content-md-center">
-      <a href="/">HOME</a> | <a href="/monthly">MONTHLY</a>
+      <a href="/">HOME</a> | <a href="/month-summary">MONTHLY</a>
     </div>
   </div>
 </div>
