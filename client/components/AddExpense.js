@@ -1,5 +1,6 @@
 import React from "react";
 import { addExpense, addMonthYear } from "../store/expenses.js";
+import { fetchCategories } from "../store/categories"
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -14,6 +15,10 @@ class AddExpense extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.getCategories()
   }
 
   handleSubmit(evt) {
@@ -61,7 +66,12 @@ class AddExpense extends React.Component {
                 aria-label="Default select example"
               >
                 <option selected>Select Category</option>
-                <option value="Alcohol">Alcohol</option>
+                {this.props.categories.map(category => {
+                  return (
+                    <option value={category.name}>{category.name}</option>
+                  )
+                })}
+                {/* <option value="Alcohol">Alcohol</option>
                 <option value="Dining Out">Dining Out</option>
                 <option value="Entertainment">Entertainment</option>
                 <option value="Groceries">Groceries</option>
@@ -70,7 +80,7 @@ class AddExpense extends React.Component {
                 </option>
                 <option value="Other">Other</option>
                 <option value="Shopping">Shopping</option>
-                <option value="Snacks & Coffee">Snacks & Coffee</option>
+                <option value="Snacks & Coffee">Snacks & Coffee</option> */}
               </select>
             </div>
           </div>
@@ -135,8 +145,15 @@ class AddExpense extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch, {history}) => ({
-  addExpense: (expense) => dispatch(addExpense(expense, history)),
+const mapState = (state) => {
+  return {
+    categories: state.categories,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  addExpense: (expense) => dispatch(addExpense(expense)),
+  getCategories: () => dispatch(fetchCategories()),
 });
 
-export default connect(null, mapDispatchToProps)(AddExpense);
+export default connect(mapState, mapDispatchToProps)(AddExpense);

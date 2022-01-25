@@ -4,6 +4,7 @@ import { fetchMonthExpenses } from "../store/monthExpenses";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import AddExpense from "./AddExpense";
+import AddCategory from "./AddCategory"
 
 export class Expenses extends React.Component {
   componentDidMount() {
@@ -35,13 +36,7 @@ export class Expenses extends React.Component {
 
         <div className="row justify-content-md-center mb-4">
           <div className="col-3 d-flex justify-content-center">
-            <button
-              className="btn btn-primary btn-sm"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight"
-            >
+          <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#addexpense" role="button" aria-controls="offcanvasExample">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -53,12 +48,12 @@ export class Expenses extends React.Component {
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
               </svg>{" "}
               Add New Expense
-            </button>
+            </a>
 
             <div
               className="offcanvas offcanvas-end"
-              tabindex="-1"
-              id="offcanvasRight"
+              tabIndex="-1"
+              id="addexpense"
               aria-labelledby="offcanvasRightLabel"
             >
               <div className="offcanvas-header">
@@ -73,6 +68,41 @@ export class Expenses extends React.Component {
               <div className="offcanvas-body"><AddExpense /></div>
             </div>
           </div>
+
+          <div className="col-3 d-flex justify-content-center">
+          <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#addcategory" role="button" aria-controls="offcanvasExample">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-plus"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+              </svg>{" "}
+              Add New Category
+            </a>
+
+            <div
+              className="offcanvas offcanvas-end"
+              tabIndex="-1"
+              id="addcategory"
+              aria-labelledby="offcanvasRightLabel"
+            >
+              <div className="offcanvas-header">
+                <button
+                  type="button"
+                  className="btn-close text-reset"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <h4>Add New Category</h4>
+              <div className="offcanvas-body"><AddCategory /></div>
+            </div>
+          </div>
+
         </div>
 
         <div className="row justify-content-md-center">

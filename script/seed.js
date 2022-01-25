@@ -43,7 +43,7 @@ function createCategories() {
       name: "Groceries"
     },
     {
-      name: "Health & Personal Care"
+      name: "Personal Care"
     },
     {
       name: "Other"
@@ -98,7 +98,7 @@ function createExpenses() {
     {
       cost: 85,
       date: "2021-10-02",
-      category: "Health & Personal Care",
+      category: "Personal Care",
       vendor: "Oskin Med Spa",
       day: "02",
       month: "10",
@@ -224,7 +224,7 @@ function createExpenses() {
     {
       cost: 30,
       date: "2021-09-01",
-      category: "Health & Personal Care",
+      category: "Personal Care",
       vendor: "King Spa",
       day: "01",
       month: "09",

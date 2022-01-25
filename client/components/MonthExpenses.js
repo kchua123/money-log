@@ -118,7 +118,7 @@ export class MonthExpenses extends React.Component {
           </div>
         </div>
 
-        <div className="row justify-content-md-center mb-3">
+        <div className="row justify-content-md-center mb-1">
           <div className="col-5 d-flex justify-content-center">
             <VictoryPie
             animate={{
@@ -146,7 +146,7 @@ export class MonthExpenses extends React.Component {
           </div>
         </div>
 
-        <div className="row justify-content-md-center mt-3">
+        <div className="row justify-content-md-center mt-2">
           <div className="col-7">
             <table className="table table-sm">
               <thead>

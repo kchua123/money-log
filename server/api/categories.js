@@ -14,3 +14,12 @@ router.get("/", async (req, res, next) => {
     next(err);
   }
 });
+
+router.post("/", async (req, res, next) => {
+  try {
+    console.log("REQ.BODY: ", req.body)
+    res.send(await Category.create(req.body));
+  } catch (error) {
+    next(error);
+  }
+});

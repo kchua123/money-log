@@ -2,6 +2,7 @@ import axios from "axios";
 
 // Action Type
 const GOT_CATEGORIES = "GOT_CATEGORIES";
+const ADD_CATEGORY = "ADD_CATEGORY";
 
 // Action Creator
 const _gotCategories = (categories) => ({
@@ -9,11 +10,10 @@ const _gotCategories = (categories) => ({
   categories,
 });
 
-// const _addExpense = (expense) => ({
-//   type: ADD_EXPENSE,
-//   expense,
-// });
-
+const _addCategory = (category) => ({
+  type: ADD_CATEGORY,
+  category
+});
 
 // Thunks
 export const fetchCategories = () => {
@@ -27,17 +27,19 @@ export const fetchCategories = () => {
   };
 };
 
-// export const addExpense = (expense) => {
-//   return async (dispatch) => {
-//     try {
-//       console.log("** EXPENSE: ", expense)
-//       const { data: newExpense } = await axios.post("/api/expenses", expense);
-//       dispatch(_addExpense(newExpense));
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
-// };
+export const addCategory = (category) => {
+  return async (dispatch) => {
+    try {
+      console.log("REACHED THE ADDCATEGORY THUNK!!!")
+      console.log("ADDCATEGORY THUNK, CATEGORY: ", category)
+      const { data: newCategory } = await axios.post("/api/categories", category);
+      console.log(newCategory)
+      dispatch(_addCategory(newCategory));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
 
 // Sub-Reducer
 const initialState = [];
@@ -46,6 +48,8 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case GOT_CATEGORIES:
       return action.categories;
+      case ADD_CATEGORY:
+      return [...state, action.category];
     default:
       return state;
   }
