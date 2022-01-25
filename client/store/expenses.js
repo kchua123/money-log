@@ -4,6 +4,8 @@ import axios from "axios";
 const GOT_EXPENSES = "GOT_EXPENSES";
 const ADD_EXPENSE = "ADD_EXPENSE";
 const ADD_MONTH_YEAR = "ADD_MONTH_YEAR";
+const DELETE_EXPENSE = "DELETE_EXPENSE";
+const UPDATE_EXPENSE = "UPDATE_EXPENSE"
 
 // Action Creator
 const _gotExpenses = (expenses) => ({
@@ -21,10 +23,15 @@ const _addMonthYear = (expense) => ({
   expense,
 });
 
-// const _updateSuperhero = (superhero) => ({
-//   type: UPATE_SUPERHERO,
-//   superhero,
-// });
+const _deleteExpense = (expense) => ({
+  type: DELETE_EXPENSE,
+  expense,
+});
+
+const _updateExpense = (expense) => ({
+  type: UPDATE_EXPENSE,
+expense,
+});
 
 // const _deleteSuperhero = (superhero) => ({
 //   type: DELETE_SUPERHERO,
@@ -55,45 +62,31 @@ export const addExpense = (expense) => {
   };
 };
 
-// export const addMonthYear = (expense) => {
-//   return async (dispatch) => {
-//     try {
-//       console.log("***EXPENSE FROM ADDMONTHYEAR THUNK", expense)
-//       const { data: updatedExpense } = await axios.put("/api/expenses",
-//         expense);
-//       dispatch(_addMonthYear(updatedExpense));
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
-// };
+export const updateExpense = (expense, history) => {
+  return async (dispatch) => {
+    try {
+      const { data: updatedExpense } = await axios.put(
+        `/api/expenses/${expense.id}`,
+        expense
+      );
+      dispatch(_updateExpense(updatedExpense));
+      history.push("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
 
-// export const updateSuperhero = (superhero, history) => {
-//   return async (dispatch) => {
-//     try {
-//       const { data: updated } = await axios.put(
-//         `/api/superheroes/${superhero.id}`,
-//         superhero
-//       );
-//       dispatch(_updateSuperhero(updated));
-//       history.push("/superheroes");
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
-// };
-
-// export const deleteSuperhero = (id, history) => {
-//   return async (dispatch) => {
-//     try {
-//       const { data: superhero } = await axios.delete(`/api/superheroes/${id}`);
-//       dispatch(_deleteSuperhero(superhero));
-//       history.push("/superheroes");
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
-// };
+export const deleteExpense = (id) => {
+  return async (dispatch) => {
+    try {
+      const { data: expense } = await axios.delete(`/api/expenses/${id}`);
+      dispatch(_deleteExpense(expense));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
 
 // Sub-Reducer
 const initialState = [];
@@ -108,12 +101,12 @@ export default (state = initialState, action) => {
       return state.map((expense) =>
         expense.id === action.expense.id ? action.expense : expense
       );
-    // case UPATE_SUPERHERO:
-    //   return state.map((superhero) =>
-    //     superhero.id === action.superhero.id ? action.superhero : superhero
-    //   );
-    // case DELETE_SUPERHERO:
-    //   return state.filter((superhero) => superhero.id !== action.superhero.id);
+    case UPDATE_EXPENSE:
+      return state.map((expense) =>
+        expense.id === action.expense.id ? action.expense : expense
+      );
+    case DELETE_EXPENSE:
+      return state.filter((expense) => expense.id !== action.expense.id);
     default:
       return state;
   }

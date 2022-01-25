@@ -17,19 +17,27 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.put("/", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
   try {
-    console.log("*** REQ.BODY FROM PUT REQUEST: ", req.body);
-    const expense = await Expense.findByPk(req.body.id);
-    await expense.update(req.body);
-
-    res.status(200).send(expense);
+    const expense = await Expense.findByPk(req.params.id);
+    res.json(expense);
   } catch (error) {
     next(error);
   }
 });
 
-router.get("/:year/:month", async (req, res, next) => {
+
+router.put("/:id", async (req, res, next) => {
+  try {
+    console.log("*** REQ.BODY FROM PUT REQUEST: ", req.params.id);
+    const updatedExpense = await Expense.findByPk(req.params.id);
+    res.send(await updatedExpense.update(req.body));
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/monthly/:year/:month", async (req, res, next) => {
   try {
     console.log("***REQ.PARAMS FROM MONTH ROUTE: ", req.params);
     const expenses = await Expense.findAll({
@@ -52,3 +60,14 @@ router.post("/", async (req, res, next) => {
     next(error);
   }
 });
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const expense = await Expense.findByPk(req.params.id);
+    await expense.destroy();
+    res.send(expense);
+  } catch (error) {
+    next(error);
+  }
+});
+

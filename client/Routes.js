@@ -8,6 +8,7 @@ import Expenses from './components/Expenses';
 import AddExpense from './components/AddExpense';
 import MonthExpenses from "./components/MonthExpenses"
 import MonthlySummary from "./components/MonthSummary"
+import EditExpense from "./components/EditExpense"
 
 /**
  * COMPONENT
@@ -29,10 +30,12 @@ class Routes extends Component {
           </Switch>
         ) : (
           <Switch>
+            <Route exact path='/expenses/:id/edit' component={EditExpense} />
             <Route exact path='/' exact component={Expenses} />
             <Route exact path='/month-summary' exact component={MonthlySummary} />
             <Route exact path='/add' exact component={AddExpense} />
             <Route exact path='/:year/:month' exact component={MonthExpenses} />
+            
           </Switch>
         )}
       </div>

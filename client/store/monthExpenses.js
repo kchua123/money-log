@@ -13,7 +13,7 @@ const _gotMonthExpenses = (expenses) => ({
 export const fetchMonthExpenses = (year, month) => {
   return async (dispatch) => {
     try {
-      const { data: expenses } = await axios.get(`/api/expenses/${year}/${month}`);
+      const { data: expenses } = await axios.get(`/api/expenses/monthly/${year}/${month}`);
       dispatch(_gotMonthExpenses(expenses));
     } catch (err) {
       console.log(err);

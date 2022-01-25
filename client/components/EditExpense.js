@@ -1,61 +1,65 @@
-import React from "react";
-import { addExpense, addMonthYear } from "../store/expenses.js";
+import React from 'react';
+import { updateExpense } from '../store/expenses';
+import { fetchExpense, _setExpense } from '../store/expense';
 import { fetchCategories } from "../store/categories"
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
-class AddExpense extends React.Component {
-  constructor() {
-    super();
+class EditExpense extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      cost: 0,
-      date: "",
-      category: "",
-      vendor: "",
+        cost: 0,
+        date: "",
+        category: "",
+        vendor: "",
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
+      console.log("**THIS.PROPS: ", this.props.match.params.id)
+    this.props.fetchExpense(this.props.match.params.id);
     this.props.getCategories()
+  }
+
+  componentWillUnmount() {
+    this.props.clearExpense();
+  }
+
+  componentDidUpdate(prevProps) {
+      console.log("PREVPROPS", prevProps)
+    if (prevProps.expense.id !== this.props.expense.id) {
+      this.setState({
+        cost: this.props.expense.cost || 0,
+        date: this.props.expense.date || "",
+        category: this.props.expense.category || "",
+        vendor: this.props.expense.vendor || "",
+      });
+      console.log("STATE AFTER COMPONENTDIDUPDATE: ", this.state)
+    }
+  }
+
+  handleChange(evt) {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    });
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
-    this.props.addExpense({
-      ...this.state,
-      month: this.state.date[5] + this.state.date[6],
-      year:
-        this.state.date[0] +
-        this.state.date[1] +
-        this.state.date[2] +
-        this.state.date[3],
-      day: this.state.date[8] +
-      this.state.date[9]
-    });
-    this.setState({
-      cost: 0,
-      date: "",
-      category: "",
-      vendor: "",
-    });
-  }
-
-  handleChange(evt) {
-    console.log("handleChange evt.target -->", evt.target);
-    this.setState({
-      [evt.target.name]: evt.target.value,
-    });
+    this.props.updateExpense({ ...this.props.expense, ...this.state });
   }
 
   render() {
     const { cost, date, category, vendor } = this.state;
     const { handleSubmit } = this;
-
+    console.log("*** RENDERING EDIT COMPONENT!!!")
     return (
-      <div className="container">
-        <form className="add-form" onSubmit={handleSubmit}>
+        <div className="container">
+            
+        <form className="edit-form col-4" onSubmit={handleSubmit}>
           <div className="mb-3 row gx-5">
             <div className="col-sm-2 category-select">
               <select
@@ -124,7 +128,7 @@ class AddExpense extends React.Component {
           <div className="mb-3 mt-4 row">
             <div className="col-sm-10">
               <button type="submit" className="btn btn-primary btn-sm">
-                Submit
+                Edit Expense
               </button>
             </div>
           </div>
@@ -135,15 +139,16 @@ class AddExpense extends React.Component {
   }
 }
 
-const mapState = (state) => {
-  return {
+const mapState = (state) => ({
+    expense: state.expense,
     categories: state.categories,
-  };
-};
+});
 
-const mapDispatchToProps = (dispatch) => ({
-  addExpense: (expense) => dispatch(addExpense(expense)),
+const mapDispatch = (dispatch, {history}) => ({
+  updateExpense: (expense) => dispatch(updateExpense(expense, history)),
+  fetchExpense: (id) => dispatch(fetchExpense(id)),
+  clearExpense: () => dispatch(_setExpense({})),
   getCategories: () => dispatch(fetchCategories()),
 });
 
-export default connect(mapState, mapDispatchToProps)(AddExpense);
+export default connect(mapState, mapDispatch)(EditExpense);
