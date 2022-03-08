@@ -243,7 +243,7 @@ function createExpenses() {
       cost: 5,
       date: "2021-11-02",
       category: "Snacks & Coffee",
-      vendor: "Boba Guys",
+      vendor: "Big Gay Ice Cream",
       day: "02",
       month: "11",
       year: "2021"
@@ -378,7 +378,7 @@ function createExpenses() {
       cost: 5,
       date: "2021-08-03",
       category: "Snacks & Coffee",
-      vendor: "Gong Cha",
+      vendor: "Joe's Coffee",
       day: "03",
       month: "08",
       year: "2021"
@@ -441,7 +441,7 @@ function createExpenses() {
       cost: 6,
       date: "2022-01-12",
       category: "Snacks & Coffee",
-      vendor: "Boba Guys",
+      vendor: "Think Coffee",
       day: "12",
       month: "01",
       year: "2022"
@@ -468,7 +468,7 @@ function createExpenses() {
       cost: 12,
       date: "2022-01-16",
       category: "Snacks & Coffee",
-      vendor: "Gong Cha",
+      vendor: "Chinatown Ice Cream Factory",
       day: "16",
       month: "01",
       year: "2022"

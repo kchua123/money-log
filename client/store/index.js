@@ -7,8 +7,9 @@ import expense from "./expense"
 import expenses from "./expenses"
 import monthExpenses from "./monthExpenses"
 import categories from "./categories"
+import category from "./category"
 
-const reducer = combineReducers({ auth, expense, expenses, monthExpenses, categories })
+const reducer = combineReducers({ auth, expense, expenses, monthExpenses, categories, category })
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )

@@ -15,6 +15,15 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/:id", async (req, res, next) => {
+  try {
+    const category = await Category.findByPk(req.params.id);
+    res.json(category);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.post("/", async (req, res, next) => {
   try {
     console.log("REQ.BODY: ", req.body)
