@@ -33,11 +33,6 @@ const _updateExpense = (expense) => ({
 expense,
 });
 
-// const _deleteSuperhero = (superhero) => ({
-//   type: DELETE_SUPERHERO,
-//   superhero,
-// });
-
 // Thunks
 export const fetchExpenses = () => {
   return async (dispatch) => {
@@ -97,10 +92,10 @@ export default (state = initialState, action) => {
       return action.expenses;
     case ADD_EXPENSE:
       return [...state, action.expense];
-    case ADD_MONTH_YEAR:
-      return state.map((expense) =>
-        expense.id === action.expense.id ? action.expense : expense
-      );
+    // case ADD_MONTH_YEAR:
+    //   return state.map((expense) =>
+    //     expense.id === action.expense.id ? action.expense : expense
+    //   );
     case UPDATE_EXPENSE:
       return state.map((expense) =>
         expense.id === action.expense.id ? action.expense : expense
